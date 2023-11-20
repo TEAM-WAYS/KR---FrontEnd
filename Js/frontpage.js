@@ -14,7 +14,7 @@ const application = {
     text : textInput
     }
     const resp = postData("application",application)
-    if(resp){
+    if(resp.status === 'OK'){
         textInput.innerText = ""
          response.innerText= "SAVED"
     }else {
