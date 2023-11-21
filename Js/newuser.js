@@ -19,7 +19,11 @@ registerBtn.addEventListener('click',()=>{
         role: "ROLE_ADMIN"
     }
     postData(user).then((resp)=> {
-        responseMess.innerText = resp
+        responseMess.innerText = resp.body.innerText
     })
+
+    window.location.href = "welcomepage.html"
+
+
 })
 

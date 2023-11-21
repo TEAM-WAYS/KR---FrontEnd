@@ -24,7 +24,8 @@ async function postData(endpiont, postData) {
         },
         body: JSON.stringify(postData),
     });
-}async function getData(endpiont, getData) {
+}
+async function getData(endpiont, getData) {
     return fetchFromApi(endpiont, {
         method: 'GET',
         headers: {
@@ -34,8 +35,8 @@ async function postData(endpiont, postData) {
     });
 }
 
-export {
+exports = {
     fetchFromApi,
     postData,
     getData
-}
+};

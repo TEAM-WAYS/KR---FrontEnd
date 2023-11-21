@@ -16,7 +16,12 @@ loginBtn.addEventListener("click",()=>{
         pwd : pwd
     }
     getData("user",user).then((resp)=>{
-        responseMess.innerText = resp
+        responseMess.innerText = resp.body
+        if(resp.accept){
+            sessionStorage.setItem("securitytoken",)
+            window.location.href = "frontpage.js"
+        }
     })
+
 })
 
