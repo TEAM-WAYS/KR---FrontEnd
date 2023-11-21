@@ -24,9 +24,18 @@ async function postData(endpiont, postData) {
         },
         body: JSON.stringify(postData),
     });
+}async function getData(endpiont, getData) {
+    return fetchFromApi(endpiont, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(getData),
+    });
 }
 
 export {
     fetchFromApi,
-    postData
+    postData,
+    getData
 }
