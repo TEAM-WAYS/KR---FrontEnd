@@ -21,21 +21,26 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error("Error fetching emails:", error));
 });
 
-function fetchEmailContent(emailId) {
-    getEmailContent(emailId)
-        .then(response => {
-            if (response.ok) {
-                return response.text();
-            } else {
-                throw new Error(`Error fetching email content. Status: ${response.status}, ${response.statusText}`);
-            }
-        })
-        .then(content => {
-            console.log("Response Content:", content);
-            document.getElementById("emailContentText").innerHTML = `Content: ${content}`;
-        })
-        .catch(error => {
-            console.error("Error fetching email content:", error);
-            throw error;
-        });
+async function fetchEmailContent(emailId) {
+    try {
+        const response = await getEmailContent(emailId);
+
+        if (response && response.content) {
+            const emailContent = response.content;
+            const contentDiv = document.getElementById("emailContentText");
+
+            contentDiv.innerHTML = `
+                <p><strong>ID:</strong> ${emailContent.id}</p>
+                <p><strong>Subject:</strong> ${emailContent.subject}</p>
+                <p><strong>From:</strong> ${emailContent.fromAddress}</p>
+                <p><strong>Sent Date:</strong> ${new Date(emailContent.sentDate).toLocaleString()}</p>
+                <p><strong>Email Content:</strong> ${emailContent.content}</p>
+            `;
+        } else {
+            throw new Error('Invalid or empty response');
+        }
+    } catch (error) {
+        console.error("Error fetching email content:", error);
+        throw error;
+    }
 }
