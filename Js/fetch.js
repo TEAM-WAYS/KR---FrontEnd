@@ -35,8 +35,4 @@ async function getData(endpiont, getData) {
     });
 }
 
-exports = {
-    fetchFromApi,
-    postData,
-    getData
-};
+export {fetchFromApi, postData, getData};

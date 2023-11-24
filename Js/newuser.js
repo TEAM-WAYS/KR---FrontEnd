@@ -1,6 +1,9 @@
 import {
     postData
-} from "./fetch";
+} from './fetch.js';
+
+
+
 
 const userName = document.getElementById("username");
 const pwd = document.getElementById("password");
@@ -18,11 +21,12 @@ registerBtn.addEventListener('click',()=>{
         pwd : pwd,
         role: "ROLE_ADMIN"
     }
-    postData(user).then((resp)=> {
+    postData("new-user",user).then((resp)=> {
+        console.log("response :"+resp)
         responseMess.innerText = resp.body.innerText
     })
 
-    window.location.href = "welcomepage.html"
+    //window.location.href = "welcomepage.html"
 
 
 })
