@@ -25,6 +25,17 @@ async function postData(endpiont, postData) {
         body: JSON.stringify(postData),
     });
 }
+async function postDataH(endpiont, postData, base64Credentials) {
+
+    return fetchFromApi(endpiont, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Basic ${base64Credentials}`
+        },
+        body: JSON.stringify(postData),
+    });
+}
+
 async function getData(endpiont, getData) {
     return fetchFromApi(endpiont, {
         method: 'GET',
@@ -35,4 +46,8 @@ async function getData(endpiont, getData) {
     });
 }
 
-export {fetchFromApi, postData, getData};
+export {
+    fetchFromApi,
+    postData,
+    postDataH,
+    getData};

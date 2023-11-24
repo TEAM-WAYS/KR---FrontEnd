@@ -1,5 +1,6 @@
 import {
     postData,
+    postDataH,
     getData
 } from './fetch.js';
 
@@ -18,7 +19,8 @@ loginBtn.addEventListener("click",()=>{
         userName : userName,
         pwd : pwd
     }
-    postData("login-user",user).then((resp)=>{
+    const base64Credentials = btoa(userName+":"+pwd)
+    postDataH("login-user",user,base64Credentials).then((resp)=>{
         responseMess.innerText = resp.body
         if(resp.accept){
             sessionStorage.setItem("securitytoken",)
