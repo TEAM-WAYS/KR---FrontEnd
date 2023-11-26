@@ -8,9 +8,9 @@ const pwdRe = document.getElementById("re-password");
 const registerBtn = document.getElementById("register");
 const responseMess = document.getElementById("response");
 
-userName.innerText = "wright a username"
-pwd.innerText = "wright a password"
-pwdRe.innerText = "reenter password"
+userName.innerText = "your username"
+pwd.innerText = "your password"
+pwdRe.innerText = "confirm your password"
 
 registerBtn.addEventListener('click',()=>{
     const user = {
