@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>List of Candidates</title>
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="../Css/candidate.css">
 </head>
-<body>
-<h2>List of Candidates</h2>
-<form id="searchForm" onsubmit="searchCandidates(); return false;">
+<body class="background-image">
+ <h2>Search for a candidate</h2>
+ <form id="searchForm" onsubmit="searchCandidates(); return false;">
   <label for="searchQuery">Search:</label>
   <input type="text" id="searchQuery" name="searchQuery" placeholder="Enter name, email, phone, or resume URL">
   <button type="submit">Search</button>
-</form>
-<table>
+ </form>
+ <table>
   <thead>
   <tr>
     <th>ID</th>
@@ -28,10 +27,10 @@
   <tbody id="candidateList">
   <!-- Candidate rows will be inserted here dynamically -->
   </tbody>
-</table>
+ </table>
 
-<a href="/">Back to List</a>
+  <a href="/">Back to List</a>
 
-<script src="../Js/candidate.js"></script>
+  <script src="../Js/searchcandidate.js"></script>
 </body>
 </html>

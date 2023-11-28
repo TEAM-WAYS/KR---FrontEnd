@@ -1,3 +1,15 @@
+body.background-image {
+    /* Set background image */
+    background-image: url('https://github.com/TEAM-WAYS/KR---FrontEnd/blob/4_save_search_candidates/Kassow%20robots.jpg?raw=true');
+
+    /* Adjust background properties */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Set background opacity */
+    opacity: 0.8; /* Adjust the opacity level as needed */
+}
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
