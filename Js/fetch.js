@@ -6,7 +6,7 @@ async function fetchFromApi(endpoint, options = {}) {
         const response = await fetch(url, options);
 
         if (!response.ok) {
-            throw new Error(`Error fetching data from ${endpoint}`);
+            throw new Error(`Error fetching data from ${endpoint}. Status: ${response.status}, ${response.statusText}`);
         }
 
         return response.json();
@@ -36,6 +36,17 @@ async function postData(endpiont, postData) {
         body: JSON.stringify(postData),
     });
 }
+async function postDataH(endpiont, postData, base64Credentials) {
+
+    return fetchFromApi(endpiont, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Basic ${base64Credentials}`
+        },
+        body: JSON.stringify(postData),
+    });
+}
+
 async function getData(endpiont, getData) {
     return fetchFromApi(endpiont, {
         method: 'GET',
@@ -46,10 +57,13 @@ async function getData(endpiont, getData) {
     });
 }
 
+
 export {
+    fetchFromApi,
     postData,
     getData,
     getEmails,
     getEmailById,
-    getEmailContent
+    getEmailContent,
+    postDataH
 };
