@@ -6,7 +6,7 @@ async function fetchFromApi(endpoint, options = {}) {
         const response = await fetch(url, options);
 
         if (!response.ok) {
-            throw new Error(`Error fetching data from ${endpoint}. Status: ${response.status}, ${response.statusText}`);
+            throw new Error(`Error fetching data from ${endpoint}`);
         }
 
         return response.json();
@@ -57,13 +57,12 @@ async function getData(endpiont, getData) {
     });
 }
 
-
 export {
     fetchFromApi,
     postData,
+    postDataH,
     getData,
     getEmails,
     getEmailById,
-    getEmailContent,
-    postDataH
+    getEmailContent
 };
