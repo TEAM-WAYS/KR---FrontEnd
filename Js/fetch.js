@@ -27,8 +27,8 @@ async function getEmailContent(emailId) {
     return fetchFromApi(`emails/content/${emailId}`);
 }
 
-async function postData(endpiont, postData) {
-    return fetchFromApi(endpiont, {
+async function postData(endpoint, postData) {
+    return fetchFromApi(endpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -36,9 +36,9 @@ async function postData(endpiont, postData) {
         body: JSON.stringify(postData),
     });
 }
-async function postDataH(endpiont, postData, base64Credentials) {
+async function postDataH(endpoint, postData, base64Credentials) {
 
-    return fetchFromApi(endpiont, {
+    return fetchFromApi(endpoint, {
         method: 'POST',
         headers: {
             'Authorization': `Basic ${base64Credentials}`
@@ -47,8 +47,8 @@ async function postDataH(endpiont, postData, base64Credentials) {
     });
 }
 
-async function getData(endpiont, getData) {
-    return fetchFromApi(endpiont, {
+async function getData(endpoint, getData) {
+    return fetchFromApi(endpoint, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -58,11 +58,9 @@ async function getData(endpiont, getData) {
 }
 
 export {
-export {
     fetchFromApi,
     postData,
     postDataH,
-    getData};
     getData,
     getEmails,
     getEmailById,
