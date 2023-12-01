@@ -1,5 +1,20 @@
+import {
+    postData
+} from './fetch';
+
+const searchBtn = document.getElementById("searchBtn")
+const inquiry  = document.getElementById("inquiry")
+let candidates = {}
+
+searchBtn.addEventListener("click", function (){
+    console.log(inquiry.innerText)
+    let inq = inquiry.innerText
+    candidates = postData("email/search", inq)
 
 
+
+
+})
 
 
 
