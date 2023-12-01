@@ -1,6 +1,10 @@
 import {
-    postData
+    postData,
+    postDataH,
+    getData
 } from './fetch.js';
+
+
 
 const userName = document.getElementById("username");
 const pwd = document.getElementById("password");
