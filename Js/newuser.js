@@ -2,42 +2,31 @@ import {
     postData
 } from './fetch.js';
 
+document.addEventListener('DOMContentLoaded', function () {
 
+    const registerBtn = document.getElementById("register");
 
+    registerBtn.addEventListener('click', () => {
 
-const userName = document.getElementById("username");
-const pwd = document.getElementById("password");
-const pwdRe = document.getElementById("re-password");
-const registerBtn = document.getElementById("register");
-const responseMess = document.getElementById("response");
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const pwdRe = document.getElementById("re-password").value;
+        const responseMess = document.getElementById("response");
 
-userName.innerText = "wright a username"
-pwd.innerText = "wright a password"
-pwdRe.innerText = "reenter password"
+        if (password !== pwdRe) {
+            responseMess.innerText = "Passwords do not match.";
+            return;
+        }
 
-registerBtn.addEventListener('click',()=>{
-    const user = {
-        userName : userName,
-        pwd : pwd,
-        role: "ROLE_ADMIN"
-    }
-    postData("new-user",user).then((resp)=> {
-        console.log("response :"+resp)
-        responseMess.innerText = resp.body.innerText
-    })
+        const user = {
+            userName: username,
+            pwd: password,
+            role: "ROLE_ADMIN"
+        };
 
-    //window.location.href = "welcomepage.html"
-
-
-})
-
-
-
-
-
-//----GO BACK WITH DOUBLE CLICK
-document.addEventListener("dblclick",()=>{
-    console.log("clicked")
-    window.location.href = "controlpanel.html"
-})
-
+        postData("new-user", user).then((resp) => {
+            console.log("response :" + resp);
+            responseMess.innerText = resp.body.innerText;
+        });
+    });
+});
