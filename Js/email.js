@@ -1,6 +1,5 @@
 import {
     getEmails,
-    getEmailById,
     getEmailContent
 } from './fetch.js';
 
