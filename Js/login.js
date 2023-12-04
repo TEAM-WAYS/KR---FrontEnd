@@ -1,10 +1,6 @@
 import {
-    postData,
-    postDataH,
-    getData
+    login
 } from './fetch.js';
-
-
 
 const userName = document.getElementById("username");
 const pwd = document.getElementById("password");
@@ -17,22 +13,20 @@ loginBtn.addEventListener("click", () => {
         pwd: pwd.value
     };
 
-    postData("login-user", user).then((resp) => {
-        responseMess.innerText = resp.body;
-        if (resp.success) {
-            sessionStorage.setItem("securitytoken", resp.token); // Assuming your response contains a token
-            window.location.href = "frontpage.js";
-        }
-    });
+    login(user)
+        .then((resp) => {
+            console.log('JSON Body:', resp);
+
+            responseMess.innerText = resp.message;
+        })
+        .catch((error) => {
+            console.error('Error during login:', error);
+            responseMess.innerText = "wrong username or password";
+        });
 });
 
-
-
-
-
-//----GO BACK WITH DOUBLE CLICK
-document.addEventListener("dblclick",()=>{
-    console.log("clicked")
-    window.location.href = "controlpanel.html"
-})
-
+// ---- GO BACK WITH DOUBLE CLICK
+document.addEventListener("dblclick", () => {
+    console.log("clicked");
+    window.location.href = "controlpanel.html";
+});

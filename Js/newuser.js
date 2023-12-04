@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         postData("new-user", user).then((resp) => {
             console.log("response :" + resp);
-            responseMess.innerText = resp.body.innerText;
+            responseMess.innerText = resp.message;
         });
     });
 });
