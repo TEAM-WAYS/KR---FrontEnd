@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             emails.forEach(email => {
                 const listItem = document.createElement("li");
-                listItem.textContent = email.subject;
+
+                const iconClass = email.seen ? 'fa-envelope-open' : 'fa-envelope';
+                listItem.innerHTML = `<i class="fa-regular ${iconClass} icon-browner"></i> ${email.subject}`;
+
                 listItem.dataset.emailId = email.id;
                 listItem.addEventListener("click", () => fetchEmailContent(email.id));
                 emailList.appendChild(listItem);
@@ -35,6 +38,13 @@ async function fetchEmailContent(emailId) {
                 <p><strong>Sent Date:</strong> ${new Date(emailContent.sentDate).toLocaleString()}</p>
                 <p><strong>Email Content:</strong> ${emailContent.content}</p>
             `;
+
+            // ÅBEN MAIL
+            const emailList = document.getElementById("emailList");
+            const listItem = emailList.querySelector(`[data-email-id="${emailId}"]`);
+            if (listItem) {
+                listItem.innerHTML = `<i class="fa-regular fa-envelope-open icon-browner"></i> ${emailContent.subject}`;
+            }
         } else {
             throw new Error('Invalid or empty response');
         }
@@ -44,8 +54,8 @@ async function fetchEmailContent(emailId) {
     }
 }
 
-//----GO BACK WITH DOUBLE CLICK
-document.addEventListener("dblclick",()=>{
-    console.log("clicked")
-    window.location.href = "controlpanel.html"
-})
+// GO BACK WITH DOUBLE CLICK
+document.addEventListener("dblclick", () => {
+    console.log("clicked");
+    window.location.href = "controlpanel.html";
+});
