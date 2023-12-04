@@ -4,6 +4,30 @@ import {
 } from './fetch.js';
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+    // MØRKLAGT ELLER BELYST KNAP
+    const toggleThemeButton = document.getElementById("toggleTheme");
+    const body = document.body;
+
+    toggleThemeButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        updateToggleIcon();
+    });
+
+    function updateToggleIcon() {
+        const darkModeActive = body.classList.contains("dark-mode");
+        const iconClass = darkModeActive ? 'fa-toggle-on' : 'fa-toggle-off';
+
+        toggleThemeButton.innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
+        // Set color to white when dark mode is active
+        toggleThemeButton.style.color = darkModeActive ? 'white' : '#333';
+    }
+
+    updateToggleIcon();
+
+    //
+
     getEmails()
         .then(emails => {
             const emailList = document.getElementById("emailList");
