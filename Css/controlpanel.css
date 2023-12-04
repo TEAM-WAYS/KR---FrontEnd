@@ -17,9 +17,9 @@ td{
 }
 #frame0{
     height: 10vh;
-    width: 99vw;
+    width: 200vw;
 }
-#frame1,#frame2,#frame3{
+#frame1,#frame2,#frame3,#frame4,#frame5,#frame6{
     height: 80vh;
     width: 30vw;
 

@@ -31,3 +31,7 @@ document.addEventListener("dblclick",()=>{
     console.log("clicked")
     window.location.href = "controlpanel.html"
 })
+
+export {
+    candidates
+}
