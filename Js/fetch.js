@@ -32,6 +32,20 @@ async function fetchFromApi(endpoint, options = {}) {
     }
 }
 
+async function markEmailAsForbidden(emailId) {
+    try {
+        const response = await postData('emails/forbid', { emailId });
+        if (response && response.success) {
+            console.log('Email marked as forbidden successfully.');
+        } else {
+            throw new Error('Failed to mark email as forbidden.');
+        }
+    } catch (error) {
+        console.error('Error marking email as forbidden:', error);
+        throw error;
+    }
+}
+
 async function login(loginData) {
     return fetchFromApi('login-user', {
         method: 'POST',
@@ -75,5 +89,6 @@ export {
     getEmails,
     getEmailById,
     getEmailContent,
+    markEmailAsForbidden,
     login
 };

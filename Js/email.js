@@ -1,6 +1,7 @@
 import {
     getEmails,
-    getEmailContent
+    getEmailContent,
+    markEmailAsForbidden  // Add this import for the new function
 } from './fetch.js';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,7 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 listItem.innerHTML = `<i class="fa-regular ${iconClass} icon-browner"></i> ${email.subject}`;
 
                 listItem.dataset.emailId = email.id;
-                listItem.addEventListener("click", () => fetchEmailContent(email.id));
+                listItem.addEventListener("click", () => {
+                    fetchEmailContent(email.id);
+                    markEmailAsForbidden(email.id); // Add this line to mark the email as forbidden
+                });
+
                 emailList.appendChild(listItem);
             });
         })
