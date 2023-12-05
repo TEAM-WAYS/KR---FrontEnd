@@ -1,29 +1,32 @@
 import {
     postData
-} from "./fetch";
+} from './fetch.js';
 
-const userName = document.getElementById("username");
-const pwd = document.getElementById("password");
-const pwdRe = document.getElementById("re-password");
-const registerBtn = document.getElementById("register");
-const responseMess = document.getElementById("response");
+document.addEventListener('DOMContentLoaded', function () {
 
-userName.innerText = "your username"
-pwd.innerText = "your password"
-pwdRe.innerText = "confirm your password"
+    const registerBtn = document.getElementById("register");
 
-registerBtn.addEventListener('click',()=>{
-    const user = {
-        userName : userName,
-        pwd : pwd,
-        role: "ROLE_ADMIN"
-    }
-    postData(user).then((resp)=> {
-        responseMess.innerText = resp.body.innerText
-    })
+    registerBtn.addEventListener('click', () => {
 
-    window.location.href = "welcomepage.html"
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const pwdRe = document.getElementById("re-password").value;
+        const responseMess = document.getElementById("response");
 
+        if (password !== pwdRe) {
+            responseMess.innerText = "Passwords do not match.";
+            return;
+        }
 
-})
+        const user = {
+            userName: username,
+            pwd: password,
+            role: "ROLE_ADMIN"
+        };
 
+        postData("new-user", user).then((resp) => {
+            console.log("response :" + resp);
+            responseMess.innerText = resp.message;
+        });
+    });
+});

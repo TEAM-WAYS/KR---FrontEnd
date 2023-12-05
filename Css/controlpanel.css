@@ -1,0 +1,16 @@
+body{
+    /*background-image: url('https://live.staticflickr.com/65535/53360059100_4d2c9d2252_b.jpg');*/
+    background-size: cover;
+    /*display: revert;*/
+    align-items: center;
+    justify-content: center;
+
+
+}
+table{
+    /*border: 1px solid #ddd;*/
+    width: 100%;
+}
+td{
+    /*border: 1px solid #ddd;*/
+}

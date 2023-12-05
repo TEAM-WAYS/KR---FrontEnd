@@ -1,5 +1,13 @@
 body{
-    align-content: center;
-    alignment: center;
+    display: flex;
 
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255,255,0.25);
+
+
+}
+label {
+     display: block;
+     margin-bottom: 5px;
 }
