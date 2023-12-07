@@ -1,17 +1,16 @@
-@import url('common.css');
-/*body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-}*/
+}
 
-/*h1 {
+h1 {
     background-color: #333;
     color: #fff;
     padding: 10px;
     text-align: center;
-}*/
+}
 
 #emailList {
     list-style: none;
@@ -67,4 +66,30 @@
 
 #toggleTheme:hover {
     color: #555; /* Set the color on hover */
+}
+
+#forbidButton {
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#sortButton {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+#sortButton:hover {
+    color: #555;
+}
+
+.dark-mode #sortButton {
+    color: #fff;
+}
+
+.dark-mode #sortButton:hover {
+    color: #ddd;
 }

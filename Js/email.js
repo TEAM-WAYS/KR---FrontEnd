@@ -4,9 +4,6 @@ import {
 } from './fetch.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
-    // MØRKLAGT ELLER BELYST KNAP
     const toggleThemeButton = document.getElementById("toggleTheme");
     const body = document.body;
 
@@ -20,13 +17,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const iconClass = darkModeActive ? 'fa-toggle-on' : 'fa-toggle-off';
 
         toggleThemeButton.innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
-        // Set color to white when dark mode is active
         toggleThemeButton.style.color = darkModeActive ? 'white' : '#333';
     }
 
     updateToggleIcon();
 
-    //
+    // Function til at updatere button icon baseret på soorting order
+    function updateSortButtonIcon() {
+        const iconClass = sortByNewest ? 'fa-arrow-down-1-9' : 'fa-arrow-up-9-1';
+        sortButton.innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
+    }
+
+
+    const sortButton = document.getElementById("sortButton");
+    let sortByNewest = true; // tracker currrent sorting order
+
+    sortButton.addEventListener("click", () => {
+        sortByNewest = !sortByNewest; // Toggle sorting ordere
+        updateSortButtonIcon();
+        sortEmails(sortByNewest);
+    });
 
     getEmails()
         .then(emails => {
@@ -63,7 +73,6 @@ async function fetchEmailContent(emailId) {
                 <p><strong>Email Content:</strong> ${emailContent.content}</p>
             `;
 
-            // ÅBEN MAIL
             const emailList = document.getElementById("emailList");
             const listItem = emailList.querySelector(`[data-email-id="${emailId}"]`);
             if (listItem) {
@@ -78,7 +87,43 @@ async function fetchEmailContent(emailId) {
     }
 }
 
-// GO BACK WITH DOUBLE CLICK
+async function sortEmails(sortByNewest) {
+    try {
+        const emails = await getEmails();
+
+        const sortedEmails = emails.slice();
+
+        // Sorter emails med sentDate
+        sortedEmails.sort((a, b) => {
+            const dateA = new Date(a.sentDate);
+            const dateB = new Date(b.sentDate);
+
+            if (sortByNewest) {
+                return dateB - dateA; // Sorte from newest to oldest
+            } else {
+                return dateA - dateB; // Sort from oldesst to newst
+            }
+        });
+
+        // Updater listen med den opdaterede liste af emails
+        const emailList = document.getElementById("emailList");
+        emailList.innerHTML = "";
+
+        sortedEmails.forEach(email => {
+            const listItem = document.createElement("li");
+
+            const iconClass = email.seen ? 'fa-envelope-open' : 'fa-envelope';
+            listItem.innerHTML = `<i class="fa-regular ${iconClass} icon-browner"></i> ${email.subject}`;
+
+            listItem.dataset.emailId = email.id;
+            listItem.addEventListener("click", () => fetchEmailContent(email.id));
+            emailList.appendChild(listItem);
+        });
+    } catch (error) {
+        console.error("Error fetching and sorting emails:", error);
+    }
+}
+
 document.addEventListener("dblclick", () => {
     console.log("clicked");
     window.location.href = "controlpanel.html";
