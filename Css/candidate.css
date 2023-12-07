@@ -1,0 +1,49 @@
+body.background-image {
+    /* Set background image */
+    background-image: url('https://github.com/TEAM-WAYS/KR---FrontEnd/blob/4_save_search_candidates/Kassow%20robots.jpg?raw=true');
+
+    /* Adjust background properties */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Set background opacity */
+    opacity: 0.8; /* Adjust the opacity level as needed */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+form {
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+}

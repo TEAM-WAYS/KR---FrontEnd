@@ -37,3 +37,34 @@
     margin: 10px;
     padding: 20px;
 }
+
+.icon-browner {
+    color: #8B4513;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode #emailList li {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode #emailContent {
+    background-color: #444;
+    color: #fff;
+}
+
+#toggleTheme {
+    border: none;
+    background: none;
+    font-size: 24px; /* Adjust the size as needed */
+    cursor: pointer;
+    color: #333; /* Set the default color */
+}
+
+#toggleTheme:hover {
+    color: #555; /* Set the color on hover */
+}
