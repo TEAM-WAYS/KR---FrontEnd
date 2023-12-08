@@ -67,3 +67,29 @@ h1 {
 #toggleTheme:hover {
     color: #555; /* Set the color on hover */
 }
+
+#forbidButton {
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#sortButton {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+#sortButton:hover {
+    color: #555;
+}
+
+.dark-mode #sortButton {
+    color: #fff;
+}
+
+.dark-mode #sortButton:hover {
+    color: #ddd;
+}

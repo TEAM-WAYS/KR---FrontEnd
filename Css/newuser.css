@@ -1,1 +1,36 @@
 @import url('common.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Professional background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the body height to viewport height */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#register {
+    background-color: #2ecc71; /* Nice green color for register button */
+    color: #fff;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
