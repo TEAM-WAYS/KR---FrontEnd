@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log("response :", data);
                 responseMess.innerText = data.message;
 
+                setTimeout(() => {
                 window.location.href = "login.html";
+                }, 3000);
             })
             .catch((error) => {
                 console.error("Fetch error:", error);

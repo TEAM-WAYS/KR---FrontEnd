@@ -6,6 +6,11 @@ const userName = document.getElementById("username");
 const pwd = document.getElementById("password");
 const loginBtn = document.getElementById("login");
 const responseMess = document.getElementById("response");
+const newUserBtn = document.getElementById('goToNewUser');
+
+newUserBtn.addEventListener("click", () =>{
+    window.location.href = 'newuser.html';
+});
 
 loginBtn.addEventListener("click", () => {
     const user = {
@@ -26,10 +31,4 @@ loginBtn.addEventListener("click", () => {
             console.error('Error during login:', error);
             responseMess.innerText = "wrong username or password";
         });
-});
-
-// ---- GO BACK WITH DOUBLE CLICK
-document.addEventListener("dblclick", () => {
-    console.log("clicked");
-    window.location.href = "controlpanel.html";
 });
