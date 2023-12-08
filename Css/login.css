@@ -1,35 +1,78 @@
-@import url('common.css');
-
-body {
+body, h1, p, label, button {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Professional background color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Set the body height to viewport height */
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
 }
 
 input {
+    width: 100%;
     padding: 8px;
-    margin: 5px 0;
+    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
-    width: 100%;
 }
 
-#login {
-    background-color: #3498db; /* Nice blue color for login button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#response {
+    margin-top: 15px;
+    text-align: center;
+    color: #e74c3c;
+}
+
+button#goToNewUser {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#goToNewUser:hover {
+    background-color: #2980b9;
 }

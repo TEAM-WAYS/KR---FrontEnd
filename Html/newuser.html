@@ -6,20 +6,28 @@
     <link rel="stylesheet" href="../Css/newuser.css">
 </head>
 <body>
-<h1>Sign Up</h1>
+<div class="container">
+    <h1>Sign Up</h1>
 
-<label for="username">User name</label><br>
-<input id="username" /><br>
+    <div class="input-container">
+        <label for="username">User name</label>
+        <input id="username" />
+    </div>
 
-<label for="password">Password</label><br>
-<input type="password" id="password" /><br>
+    <div class="input-container">
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+    </div>
 
-<label for="re-password">Confirm Password</label><br>
-<input type="password" id="re-password"/><br>
+    <div class="input-container">
+        <label for="re-password">Confirm Password</label>
+        <input type="password" id="re-password"/>
+    </div>
 
-<button id="register">Register</button><br>
+    <button id="register">Register</button>
 
-<div id="response"></div>
+    <div id="response"></div>
+</div>
 
 <script type="module" src="../Js/fetch.js"></script>
 <script type="module" src="../Js/newuser.js"></script>
