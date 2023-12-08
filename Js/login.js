@@ -16,8 +16,11 @@ loginBtn.addEventListener("click", () => {
     login(user)
         .then((resp) => {
             console.log('JSON Body:', resp);
-
             responseMess.innerText = resp.message;
+
+            setTimeout(() => {
+                window.location.href = "controlpanel.html";
+            }, 3000);
         })
         .catch((error) => {
             console.error('Error during login:', error);
