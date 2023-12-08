@@ -24,9 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
             role: "ROLE_ADMIN"
         };
 
-        postData("new-user", user).then((resp) => {
-            console.log("response :" + resp);
-            responseMess.innerText = resp.message;
-        });
+        postData("new-user", user)
+            .then((data) => {
+                console.log("response :", data);
+                responseMess.innerText = data.message;
+            })
+            .catch((error) => {
+                console.error("Fetch error:", error);
+                responseMess.innerText = error.message;
+            });
     });
 });
