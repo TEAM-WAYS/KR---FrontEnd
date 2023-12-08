@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const registerBtn = document.getElementById("register");
 
     registerBtn.addEventListener('click', () => {
-
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
         const pwdRe = document.getElementById("re-password").value;
@@ -28,10 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
             .then((data) => {
                 console.log("response :", data);
                 responseMess.innerText = data.message;
+
+                window.location.href = "login.html";
             })
             .catch((error) => {
                 console.error("Fetch error:", error);
                 responseMess.innerText = error.message;
             });
     });
+
 });
