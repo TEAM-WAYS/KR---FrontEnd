@@ -24,3 +24,7 @@ function searchCandidates() {
 
     displayCandidates(filteredCandidates);
 }
+function goToCandidatePage() {
+    // Navigate to the "Candidate" page
+    window.location.href = 'candidate.html';
+}

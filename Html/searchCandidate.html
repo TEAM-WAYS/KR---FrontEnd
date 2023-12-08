@@ -9,7 +9,7 @@
 <body class="background-image">
  <h2>Search for a candidate</h2>
  <form id="searchForm" onsubmit="searchCandidates(); return false;">
-  <label for="searchQuery">Search:</label>
+  <label for="searchQuery">Search by name,please type the candidate name you are looking for:</label>
   <input type="text" id="searchQuery" name="searchQuery" placeholder="Enter name, email, phone, or resume URL">
   <button type="submit">Search</button>
  </form>
@@ -29,8 +29,9 @@
   </tbody>
  </table>
 
-  <a href="/">Back to List</a>
+ <!-- <a href="/">Back to List</a> -->
+<button onclick="goToCandidatePage()">Back to Candidate List</button>
 
-  <script src="../Js/searchcandidate.js"></script>
+ <script src="../Js/searchcandidate.js"></script>
 </body>
 </html>
