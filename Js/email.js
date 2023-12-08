@@ -67,10 +67,12 @@ async function fetchEmailContent(emailId) {
 
             contentDiv.innerHTML = `
                 <p><strong>ID:</strong> ${emailContent.id}</p>
-                <p><strong>Subject:</strong> ${emailContent.subject}</p>
-                <p><strong>From:</strong> ${emailContent.fromAddress}</p>
-                <p><strong>Sent Date:</strong> ${new Date(emailContent.sentDate).toLocaleString()}</p>
-                <p><strong>Email Content:</strong> ${emailContent.content}</p>
+
+                            <p><i <i class="fa-solid fa-highlighter"></i> ${emailContent.subject}</p>
+             <p><i class="fa-solid fa-user"></i> ${emailContent.fromAddress}</p>
+                <p><i class="fa-regular fa-calendar"></i> ${new Date(emailContent.sentDate).toLocaleString()}</p>
+                  <p><i class="fa-solid fa-file-lines"></i> ${emailContent.content}</p>
+
             `;
 
             const emailList = document.getElementById("emailList");
