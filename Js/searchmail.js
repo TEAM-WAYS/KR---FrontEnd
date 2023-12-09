@@ -8,7 +8,7 @@ const jwtToken = sessionStorage.getItem('jwtToken')
 
 const searchBtn = document.getElementById("searchBtn")
 const inquiry  = document.getElementById("inquiry")
-let candidates = {}
+let candidateList
 
 searchBtn.addEventListener("click", ()=>{
     console.log("search button pushed")
@@ -24,15 +24,13 @@ searchBtn.addEventListener("click", ()=>{
 
     })*/
 
-    candidates = postData("application/search",inq,jwtToken).then(()=>{
-            console.log("candidates: "+candidates)
-        }
+    const answer = postData("application/search",inq,jwtToken).then(()=>{
+            console.log("###candidates: "+answer)
+            candidateList = JSON.parse(answer)
+            console.log(answer)
+        })
 
-    )
-
-
-
-})
+    })
 
 
 
@@ -43,5 +41,5 @@ document.addEventListener("dblclick",()=>{
 })
 
 export {
-    candidates
+    candidateList
 }

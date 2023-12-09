@@ -1,22 +1,17 @@
 import {
-    candidates
+    candidateList
 } from './searchmail.js';
-let candidateList ={
-    id: null,
-    name: null,
-    summery: null,
-    age: null,
-    phone: null,
-    title: null,
-    profession: null
-}
-candidateList = JSON.parse(candidates)
+import {
+    getData
+} from "./fetch";
+
+
 const resultTable = document.getElementById("result-table")
 
-candidateList.forEach((application)=>{
+candidateList.forEach((o)=>{
     const row = resultTable.insertRow(resultTable.length);
     const cell1 = row.insertCell(0)
-    //const cell2 = row.insertCell(1)
-    cell1.innerText = application.summery
+
+    cell1.innerText = o.reson
     cell1.insertAdjacentHTML('afterend',<button >Pick this One</button>  )
 })
