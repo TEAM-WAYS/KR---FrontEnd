@@ -4,6 +4,9 @@ const frame0 = document.getElementById("frame0")
 const frame1 = document.getElementById("frame1")
 const frame2 = document.getElementById("frame2")
 const frame3 = document.getElementById("frame3")
+const frame4 = document.getElementById("frame4")
+const frame5 = document.getElementById("frame5")
+const frame6 = document.getElementById("frame6")
 
 frame0.contentDocument.addEventListener("dblclick",()=>{
     console.log("clicked")
@@ -20,6 +23,18 @@ frame2.contentDocument.addEventListener("dblclick",()=>{
 frame3.contentDocument.addEventListener("dblclick",()=>{
     console.log("clicked")
     window.location.href = frame3.getAttribute("src")
+})
+frame4.contentDocument.addEventListener("dblclick",()=>{
+    console.log("clicked")
+    window.location.href = frame4.getAttribute("src")
+})
+frame5.contentDocument.addEventListener("dblclick",()=>{
+    console.log("clicked")
+    window.location.href = frame5.getAttribute("src")
+})
+frame6.contentDocument.addEventListener("dblclick",()=>{
+    console.log("clicked")
+    window.location.href = frame6.getAttribute("src")
 })
 
 

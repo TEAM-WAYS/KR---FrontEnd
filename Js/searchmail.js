@@ -17,14 +17,18 @@ searchBtn.addEventListener("click", ()=>{
     console.log(inq)
     console.log("token: "+jwtToken)
     console.log("Transforming mails")
-    const answer = getData("emails/transform",jwtToken).then(()=>{
+    /*const answer = getData("emails/transform",jwtToken).then(()=>{
         console.log("response: "+answer)
-        candidates = postData("application/search",inq,jwtToken).then(()=>{
-            console.log("candidates: "+candidates)
-            }
 
-        )
-    })
+        insert function here
+
+    })*/
+
+    candidates = postData("application/search",inq,jwtToken).then(()=>{
+            console.log("candidates: "+candidates)
+        }
+
+    )
 
 
 
