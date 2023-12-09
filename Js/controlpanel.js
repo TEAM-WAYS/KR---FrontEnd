@@ -1,6 +1,10 @@
+import {
+    checkLogin
+} from './loginCheck.js';
 
-//-----iframe control
-const frame0 = document.getElementById("frame0")
+document.addEventListener('DOMContentLoaded', () => {
+    checkLogin();
+});
 const frame1 = document.getElementById("frame1")
 const frame2 = document.getElementById("frame2")
 const frame3 = document.getElementById("frame3")
@@ -8,10 +12,6 @@ const frame4 = document.getElementById("frame4")
 const frame5 = document.getElementById("frame5")
 const frame6 = document.getElementById("frame6")
 
-frame0.contentDocument.addEventListener("dblclick",()=>{
-    console.log("clicked")
-    window.location.href = frame0.getAttribute("src")
-})
 frame1.contentDocument.addEventListener("dblclick",()=>{
     console.log("clicked")
     window.location.href = frame1.getAttribute("src")

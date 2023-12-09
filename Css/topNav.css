@@ -20,12 +20,19 @@ button {
     margin: 10px;
 }
 
-#login {
-    background-color: #3498db; /* Blue color for login button */
+#logout {
+    background-color: #e74c3c;
     color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 15px
 }
 
-#new-user {
-    background-color: #2ecc71; /* Green color for new user button */
-    color: #fff;
+#company-text {
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 0px
 }
