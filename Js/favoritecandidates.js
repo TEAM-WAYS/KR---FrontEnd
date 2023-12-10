@@ -1,5 +1,4 @@
 
-
 let candidates = [];
 
 function addToFavorites(candidateId) {

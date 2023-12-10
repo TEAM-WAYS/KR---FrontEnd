@@ -10,7 +10,25 @@ body{
 table{
     /*border: 1px solid #ddd;*/
     width: 100%;
+    height: 85vh;
+    align-self: center;
 }
 td{
+    align-content: center;
+    align-self: center;
     /*border: 1px solid #ddd;*/
+}
+#frame0{
+    height: 10vh;
+    width: 99vw;
+}
+#frame1,#frame2,#frame3,#frame4,#frame5,#frame6{
+    height: 70vh;
+    width: 30vw;
+
+}
+.fa-arrow-right{
+    font-size: xxx-large;
+    align-self: center;
+    color: white;
 }

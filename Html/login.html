@@ -6,17 +6,24 @@
     <link rel="stylesheet" href="../Css/login.css">
 </head>
 <body>
-<h1>Login</h1>
+<div class="container">
+    <h1>Login</h1>
 
-<label for="username">User name</label><br>
-<input id="username" /><br>
+    <div class="input-container">
+        <label for="username">User name</label>
+        <input id="username" />
+    </div>
 
-<label for="password">Password</label><br>
-<input type="password" id="password" /><br>
+    <div class="input-container">
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+    </div>
 
-<button id="login">Login</button><br>
+    <button id="login">Login</button>
+    <button id="goToNewUser">New User</button>
 
-<div id="response"></div>
+    <div id="response"></div>
+</div>
 
 <script type="module" src="../Js/fetch.js"></script>
 <script type="module" src="../Js/login.js"></script>

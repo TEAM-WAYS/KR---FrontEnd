@@ -1,0 +1,38 @@
+@import url('common.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Professional background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the body height to viewport height */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#logout {
+    background-color: #e74c3c;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 15px
+}
+
+#company-text {
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 0px
+}

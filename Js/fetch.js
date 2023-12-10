@@ -57,16 +57,24 @@ async function getEmailContent(emailId, token) {
 async function postData(endpoint, postData, token) {
     return fetchFromApi(endpoint, {
         method: 'POST',
-        body: JSON.stringify(postData),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData)
     }, token);
 }
 
-async function getData(endpoint, getData, token) {
+async function getData(endpoint, token) {
+    return fetchFromApi(endpoint, {method: 'GET'}, token);
+}
+async function getDataById(endpoint, token) {
     return fetchFromApi(endpoint, {
-        method: 'GET',
-        body: JSON.stringify(getData),
+        method: 'GET'
+
     }, token);
 }
+
+
 
 export {
     fetchFromApi,
@@ -75,5 +83,6 @@ export {
     getEmails,
     getEmailById,
     getEmailContent,
-    login
+    login,
+    getDataById
 };
