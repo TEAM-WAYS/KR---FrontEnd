@@ -25,9 +25,10 @@ searchBtn.addEventListener("click", ()=>{
     })*/
 
     const answer = postData("application/search",inq,jwtToken).then(()=>{
+
             console.log("###candidates: "+answer)
             candidateList = JSON.parse(answer)
-            console.log(answer)
+            console.log(candidateList)
         })
 
     })
