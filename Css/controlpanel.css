@@ -22,7 +22,11 @@ td{
     height: 10vh;
     width: 99vw;
 }
-#frame1,#frame2,#frame3,#frame4,#frame5,#frame6{
+#frame1{
+    height: 70vh;
+    width: 99vw;
+}
+#frame2,#frame3,#frame4,#frame5,#frame6{
     height: 70vh;
     width: 30vw;
 

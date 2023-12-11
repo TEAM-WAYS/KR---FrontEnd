@@ -9,21 +9,27 @@
 
 </head>
 <body>
+<div id="top">
 <h1>Emails</h1>
 <button id="toggleTheme">Toggle Theme</button>
 <button id="sortButton">Sort by Date</button>
-
-
-<ul id="emailList"></ul>
-
-
-<div id="emailContent">
-  <h2>Email Content</h2>
-  <p id="emailSubject"></p>
-  <p id="emailFrom"></p>
-  <p id="emailSentDate"></p>
 </div>
-<div id="emailContentText"></div>
+
+<div id="main-container">
+  <div id="left">
+    <ul id="emailList"></ul>
+  </div>
+
+  <div id="right">
+    <div id="emailContent">
+      <h2>Email Content</h2>
+      <p id="emailSubject"></p>
+      <p id="emailFrom"></p>
+      <p id="emailSentDate"></p>
+    </div>
+    <div id="emailContentText"></div>
+  </div>
+</div>
 
 <script type="module" src="../Js/fetch.js"></script>
 <script type="module" src="../Js/email.js"></script>
