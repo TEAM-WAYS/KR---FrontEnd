@@ -1,6 +1,7 @@
 import{
 
 } from '../applsearchresult.js'
+
 const summary = document.getElementById("summary")
 const mail = document.getElementById("mail")
 const name = document.getElementById("name")

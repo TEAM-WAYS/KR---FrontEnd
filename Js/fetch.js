@@ -24,8 +24,7 @@ async function fetchFromApi(endpoint, options = {}) {
             sessionStorage.setItem('jwtToken', newJwtToken);
             console.log('JWT Token:', newJwtToken);
         }
-
-        return response.json();
+        return await response.json();
     } catch (error) {
         console.error('Fetch error:', error);
         throw error;
