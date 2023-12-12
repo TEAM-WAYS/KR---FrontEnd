@@ -94,6 +94,13 @@ h1 {
     color: #333;
 }
 
+#sync {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
 #sortButton:hover {
     color: #555;
 }

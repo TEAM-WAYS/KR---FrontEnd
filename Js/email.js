@@ -1,6 +1,7 @@
 import {
     getEmails,
-    getEmailContent
+    getEmailContent,
+    sync
 } from './fetch.js';
 
 const emailContentHeading = document.getElementById("emailContent");
@@ -39,7 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const iconClass = sortByNewest ? 'fa-arrow-down-1-9' : 'fa-arrow-up-9-1';
         sortButton.innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
     }
-
+    const syncButton = document.getElementById("sync");
+    syncButton.innerHTML = `<i class="fa-solid fa-arrows-rotate"></i>`;
+    syncButton.addEventListener("click", ()=>
+    {
+        updateEmails()
+    })
 
     const sortButton = document.getElementById("sortButton");
     let sortByNewest = true; // tracker currrent sorting order
@@ -49,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSortButtonIcon();
         sortEmails(sortByNewest);
     });
-
     getEmails()
         .then(emails => {
+            console.log(emails)
             const emailList = document.getElementById("emailList");
             emailList.innerHTML = "";
 
@@ -68,6 +74,31 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.error("Error fetching emails:", error));
 });
+async function updateEmails(){
+    await sync()
+    setTimeout("", 15000)
+    fetchEmails()
+}
+async function fetchEmails(){
+    getEmails()
+        .then(emails => {
+            console.log(emails)
+            const emailList = document.getElementById("emailList");
+            emailList.innerHTML = "";
+
+            emails.forEach(email => {
+                const listItem = document.createElement("li");
+
+                const iconClass = email.seen ? 'fa-envelope-open' : 'fa-envelope';
+                listItem.innerHTML = `<i class="fa-regular ${iconClass} icon-browner"></i> ${email.subject}`;
+
+                listItem.dataset.emailId = email.id;
+                listItem.addEventListener("click", () => fetchEmailContent(email.id));
+                emailList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error("Error fetching emails:", error));
+}
 
 async function fetchEmailContent(emailId) {
     try {
