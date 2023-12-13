@@ -60,7 +60,7 @@ async function getApplicationsFromInq(inq,token) {
     );
 }
 
-async function postData(endpoint, postData) {
+/*async function postData(endpoint, postData) {
     return fetchFromApi(endpoint, {
         method: 'POST',
         headers: {
@@ -68,6 +68,16 @@ async function postData(endpoint, postData) {
         },
         body: JSON.stringify(postData)
     });
+}*/
+
+async function postData(endpoint, postData, token) {
+    return fetchFromApi(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData)
+    }, token);
 }
 
 async function getData(endpoint) {
