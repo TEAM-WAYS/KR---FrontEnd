@@ -53,7 +53,11 @@ async function getEmailContent(emailId, token) {
     return fetchFromApi(`emails/content/${emailId}`, {}, token);
 }
 async function getApplicationTest(token) {
-    return fetchFromApi(`application/testConnection`, {}, token);
+    return fetchFromApi(`application/testString`, {}, token);
+}
+async function getApplicationsFromInq(inq,token) {
+    return fetchFromApi(`application/search/${inq}`, {}, token
+    );
 }
 
 async function postData(endpoint, postData) {
@@ -87,5 +91,6 @@ export {
     getEmailContent,
     login,
     getDataById,
-    getApplicationTest
+    getApplicationTest,
+    getApplicationsFromInq
 };

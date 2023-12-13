@@ -1,7 +1,8 @@
 import {
     getData,
     postData,
-    getApplicationTest
+    getApplicationTest,
+    getApplicationsFromInq
 } from './fetch.js';
 
 
@@ -20,23 +21,21 @@ searchBtn.addEventListener("click", async () => {
     console.log("Running connection tests:")
 
     getApplicationTest().then((answer)=>{
-        console.log(answer)
-    })
-    postData("application/testConnection").then((answer)=>{
-        console.log(answer)
-    })
-    postData("application/testJSON").then((answer)=>{
-        console.log(answer.name)
-        console.log(answer.age)
-    })
-    postData("application/testJSONArray").then((answer)=>{
         answer.forEach((object)=>{
             console.log(object.name)
             console.log(object.age)
         })
     })
+    getApplicationsFromInq(inquiry.value).then((array)=>{
+        array.forEach((object)=>{
+            //console.log(object.applicationId)
+            console.log(object.points)
+            console.log(object.reason)
+        })
+    })
 
-    console.log("Searching Applications")
+
+    /*console.log("Searching Applications")
 
 
         postData ("application/search",inq).then((applications)=>{
@@ -56,7 +55,7 @@ searchBtn.addEventListener("click", async () => {
             })
 
 
-        })
+        })*/
 
     })
 //-----search result
