@@ -52,25 +52,28 @@ async function getEmailById(emailId, token) {
 async function getEmailContent(emailId, token) {
     return fetchFromApi(`emails/content/${emailId}`, {}, token);
 }
+async function getApplicationTest(token) {
+    return fetchFromApi(`application/testConnection`, {}, token);
+}
 
-async function postData(endpoint, postData, token) {
+async function postData(endpoint, postData) {
     return fetchFromApi(endpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(postData)
-    }, token);
+    });
 }
 
-async function getData(endpoint, token) {
-    return fetchFromApi(endpoint, {method: 'GET'}, token);
+async function getData(endpoint) {
+    return fetchFromApi(endpoint, {method: 'GET'});
 }
-async function getDataById(endpoint, token) {
+async function getDataById(endpoint) {
     return fetchFromApi(endpoint, {
         method: 'GET'
 
-    }, token);
+    });
 }
 
 
@@ -83,5 +86,6 @@ export {
     getEmailById,
     getEmailContent,
     login,
-    getDataById
+    getDataById,
+    getApplicationTest
 };
