@@ -12,6 +12,10 @@ import {
 const searchBtn = document.getElementById("searchBtn")
 const inquiry  = document.getElementById("inquiry")
 const resultTable = document.getElementById("result-table")
+const id = document.getElementById("id")
+const name = document.getElementById("name")
+const summary = document.getElementById("summary")
+const email = document.getElementById("email")
 let applicationList;
 searchBtn.addEventListener("click", async () => {
     console.log("search button pushed")
@@ -20,17 +24,25 @@ searchBtn.addEventListener("click", async () => {
     console.log(inq)
     console.log("Running connection tests:")
 
-    getApplicationTest().then((answer)=>{
-        answer.forEach((object)=>{
-            console.log(object.name)
-            console.log(object.age)
-        })
-    })
-    getApplicationsFromInq(inquiry.value).then((array)=>{
+
+    //getApplicationsFromInq(inquiry.value).then((array)=>{
+    getApplicationTest().then((array)=>{
+
         array.forEach((object)=>{
-            //console.log(object.applicationId)
+            console.log(object.id)
             console.log(object.points)
             console.log(object.reason)
+
+        })
+        array.forEach((object) => {
+            const row = resultTable.insertRow(resultTable.length);
+            const cell1 = row.insertCell(row.length)
+            cell1.classList.add('cell1')
+
+            cell1.innerHTML = object.reason
+            cell1.addEventListener("click", (object)=>{
+                id.innerHTML=object.id
+            })
         })
     })
 
@@ -71,6 +83,4 @@ searchBtn.addEventListener("click", async () => {
         window.location.href = "controlpanel.html"
     })
 
-    export {
-        applicationList
-    }
+

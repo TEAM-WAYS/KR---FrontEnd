@@ -53,22 +53,23 @@ async function getEmailContent(emailId, token) {
     return fetchFromApi(`emails/content/${emailId}`, {}, token);
 }
 async function getApplicationTest(token) {
-    return fetchFromApi(`application/testString`, {}, token);
+    return fetchFromApi(`application/testObjectList`, {}, token);
 }
 async function getApplicationsFromInq(inq,token) {
-    return fetchFromApi(`application/search/${inq}`, {}, token
-    );
-}
-
-/*async function postData(endpoint, postData) {
-    return fetchFromApi(endpoint, {
-        method: 'POST',
+    return fetchFromApi(`application/search`, {
+        /*method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(postData)
-    });
-}*/
+        body: JSON.stringify({inq:inq})*/
+        }, token
+    );
+}
+async function getApplicationById(appId, token) {
+    return fetchFromApi(`application/${appId}`, {}, token);
+}
+
+
 
 async function postData(endpoint, postData, token) {
     return fetchFromApi(endpoint, {
