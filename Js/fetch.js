@@ -44,7 +44,9 @@ async function login(loginData) {
 async function getEmails(token) {
     return fetchFromApi('emails', {}, token);
 }
-
+async function sync(token) {
+    return fetchFromApi('emails/sync', {}, token);
+}
 async function getEmailById(emailId, token) {
     return fetchFromApi(`emails/${emailId}`, {}, token);
 }
@@ -104,5 +106,7 @@ export {
     getDataById,
     getApplicationTest,
     getApplicationsIdFromInq,
-    getApplicationById
+    getApplicationById,
+    getDataById,
+    sync
 };

@@ -37,6 +37,7 @@ const backgroundImages = [
 
 document.addEventListener('DOMContentLoaded', function () {
     const randomBackground = getRandomElement(backgroundImages);
+    console.log('Setting background image..')
     document.body.style.backgroundImage = `url('${randomBackground}')`
 })
 
