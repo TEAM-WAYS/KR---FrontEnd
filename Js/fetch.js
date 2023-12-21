@@ -107,6 +107,5 @@ export {
     getApplicationTest,
     getApplicationsIdFromInq,
     getApplicationById,
-    getDataById,
     sync
 };

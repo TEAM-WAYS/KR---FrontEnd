@@ -51,7 +51,7 @@ searchBtn.addEventListener("click", async () => {
                     name.innerHTML= application.name
                     summary.innerHTML=application.summary
 
-                    email.innerHTML="--- the email ----" // emailWhereApplicationId
+                    email.innerText="--- the email ----" // emailWhereApplicationId
                 })
 
             })
