@@ -2,7 +2,8 @@ import {
     getData,
     postData,
     getApplicationTest,
-    getApplicationsFromInq
+    getApplicationsIdFromInq,
+    getApplicationById
 } from './fetch.js';
 
 
@@ -34,14 +35,25 @@ searchBtn.addEventListener("click", async () => {
             console.log(object.reason)
 
         })
-        array.forEach((object) => {
+        while(resultTable.hasChildNodes()){  //Clear table
+            resultTable.removeChild(resultTable.firstChild)
+        }
+        array.forEach((object) => { //Setting table
+
             const row = resultTable.insertRow(resultTable.length);
             const cell1 = row.insertCell(row.length)
             cell1.classList.add('cell1')
 
             cell1.innerHTML = object.reason
-            cell1.addEventListener("click", (object)=>{
+            cell1.addEventListener("click", ()=>{
                 id.innerHTML=object.id
+                getApplicationById(object.id).then((application)=>{
+                    name.innerHTML= application.name
+                    summary.innerHTML=application.summary
+
+                    email.innerHTML="--- the email ----" // emailWhereApplicationId
+                })
+
             })
         })
     })

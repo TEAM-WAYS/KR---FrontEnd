@@ -55,7 +55,7 @@ async function getEmailContent(emailId, token) {
 async function getApplicationTest(token) {
     return fetchFromApi(`application/testObjectList`, {}, token);
 }
-async function getApplicationsFromInq(inq,token) {
+async function getApplicationsIdFromInq(inq,token) {
     return fetchFromApi(`application/search`, {
         /*method: 'POST',
         headers: {
@@ -66,7 +66,7 @@ async function getApplicationsFromInq(inq,token) {
     );
 }
 async function getApplicationById(appId, token) {
-    return fetchFromApi(`application/${appId}`, {}, token);
+    return fetchFromApi(`application/id/${appId}`, {}, token);
 }
 
 
@@ -103,5 +103,6 @@ export {
     login,
     getDataById,
     getApplicationTest,
-    getApplicationsFromInq
+    getApplicationsIdFromInq,
+    getApplicationById
 };
